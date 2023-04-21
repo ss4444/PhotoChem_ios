@@ -12,41 +12,43 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="home" id="BYZ-38-t0r" customClass="ViewController" customModule="ForRodion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoChem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TES-uN-RGd">
                                 <rect key="frame" x="69" y="342" width="255" height="193"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMf-Iy-SZV">
-                                        <rect key="frame" x="107" y="86" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="tintColor"/>
                                 <constraints>
-                                    <constraint firstItem="rMf-Iy-SZV" firstAttribute="centerY" secondItem="TES-uN-RGd" secondAttribute="centerY" id="Qgr-DY-TO7"/>
                                     <constraint firstAttribute="height" constant="193" id="RcA-pU-QJU"/>
-                                    <constraint firstItem="rMf-Iy-SZV" firstAttribute="centerX" secondItem="TES-uN-RGd" secondAttribute="centerX" id="SOb-w8-Nb3"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="Tjr-m9-Nj8"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="193" id="vyv-3n-1mQ"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hKU-KB-BOs">
+                                <rect key="frame" x="198" y="248" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" systemColor="labelColor"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMf-Iy-SZV">
+                                <rect key="frame" x="69" y="264" width="255" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TES-uN-RGd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="283" id="cZY-W1-lvm"/>
-                            <constraint firstItem="TES-uN-RGd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kQT-67-PEq"/>
                             <constraint firstItem="TES-uN-RGd" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="tcu-1w-3M5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="popUpLabel" destination="rMf-Iy-SZV" id="YQL-sJ-vcD"/>
                         <outlet property="popUpView" destination="TES-uN-RGd" id="PTB-jz-HxG"/>
+                        <outlet property="spinnerLoader" destination="hKU-KB-BOs" id="pNN-4c-4C2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -55,6 +57,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

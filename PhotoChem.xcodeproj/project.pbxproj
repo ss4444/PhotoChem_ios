@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50AEC63229ED30630061C258 /* ForRodion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForRodion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50AEC63229ED30630061C258 /* PhotoChem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoChem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AEC63529ED30630061C258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50AEC63729ED30630061C258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		50AEC63929ED30630061C258 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		50AEC63329ED30630061C258 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50AEC63229ED30630061C258 /* ForRodion.app */,
+				50AEC63229ED30630061C258 /* PhotoChem.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		50AEC63129ED30630061C258 /* ForRodion */ = {
+		50AEC63129ED30630061C258 /* PhotoChem */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50AEC64629ED30640061C258 /* Build configuration list for PBXNativeTarget "ForRodion" */;
+			buildConfigurationList = 50AEC64629ED30640061C258 /* Build configuration list for PBXNativeTarget "PhotoChem" */;
 			buildPhases = (
 				50AEC62E29ED30630061C258 /* Sources */,
 				50AEC62F29ED30630061C258 /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = ForRodion;
+			name = PhotoChem;
 			productName = ForRodion;
-			productReference = 50AEC63229ED30630061C258 /* ForRodion.app */;
+			productReference = 50AEC63229ED30630061C258 /* PhotoChem.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 50AEC62D29ED30630061C258 /* Build configuration list for PBXProject "ForRodion" */;
+			buildConfigurationList = 50AEC62D29ED30630061C258 /* Build configuration list for PBXProject "PhotoChem" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50AEC63129ED30630061C258 /* ForRodion */,
+				50AEC63129ED30630061C258 /* PhotoChem */,
 			);
 		};
 /* End PBXProject section */
@@ -341,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		50AEC62D29ED30630061C258 /* Build configuration list for PBXProject "ForRodion" */ = {
+		50AEC62D29ED30630061C258 /* Build configuration list for PBXProject "PhotoChem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50AEC64429ED30640061C258 /* Debug */,
@@ -350,7 +350,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50AEC64629ED30640061C258 /* Build configuration list for PBXNativeTarget "ForRodion" */ = {
+		50AEC64629ED30640061C258 /* Build configuration list for PBXNativeTarget "PhotoChem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50AEC64729ED30640061C258 /* Debug */,

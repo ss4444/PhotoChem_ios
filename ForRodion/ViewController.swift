@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var popUpView: UIView!
     @IBOutlet var popUpLabel: UILabel!
     var session: AVCaptureSession?
+    @IBOutlet var spinnerLoader: UIActivityIndicatorView!
     
     let output = AVCapturePhotoOutput()
     let previewLayer = AVCaptureVideoPreviewLayer()
@@ -56,12 +57,10 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         previewLayer.frame = view.bounds
-//        popUpView.center = CGPoint(x: 200, y: 500)
         popUpView.backgroundColor = .gray
         popUpView.center = view.center
         popUpLabel.center = popUpView.center
-//        okButton.center = popUpLabel.center
-//        okButton.center = CGPoint(x: 177, y: 195)
+        spinnerLoader.center = view.center
         shutterButton.center = CGPoint(x: view.frame.size.width/2,
                                        y: view.frame.size.height - 100)
         stockButton.center = CGPoint(x: view.frame.size.width/2,
@@ -166,8 +165,13 @@ extension ViewController: AVCapturePhotoCaptureDelegate, UIImagePickerController
         var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
         let alert = UIAlertController(title: "Loading", message: "Please wait...", preferredStyle: .alert)
-        present(alert, animated: true, completion: nil)
+        view.addSubview(spinnerLoader)
+        spinnerLoader.color = .white
+        spinnerLoader.backgroundColor = .gray
+        spinnerLoader.layer.cornerRadius = 5
+        spinnerLoader.startAnimating()
         var data = Data()
         data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
         let paramName = "file"
@@ -190,12 +194,15 @@ extension ViewController: AVCapturePhotoCaptureDelegate, UIImagePickerController
                         }
                     }).resume()
         DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
-            alert.dismiss(animated: true, completion: nil)
-            self.popUpLabel.text = normal
+            self.spinnerLoader.removeFromSuperview()
+            if normal == "" {
+                self.popUpLabel.text = "Проверьте интренет"
+            }else{
+                self.popUpLabel.text = normal
+            }
+            
             self.popUpView.center = self.view.center
             self.animateIn()
- 
-//            self.view.addSubview(self.stockButton)
            
         }
         
@@ -219,6 +226,7 @@ extension ViewController: AVCapturePhotoCaptureDelegate, UIImagePickerController
             self.popUpView.alpha = 1
             self.popUpView.transform = CGAffineTransform.identity
         }
+        self.view.addSubview(popUpLabel)
         view.addSubview(stockButton)
     }
     
@@ -226,6 +234,7 @@ extension ViewController: AVCapturePhotoCaptureDelegate, UIImagePickerController
         UIView.animate(withDuration: 0.4, animations: {
             self.popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.popUpView.alpha = 0
+            self.popUpLabel.removeFromSuperview()
             
         }) { (success: Bool) in
             self.popUpView.removeFromSuperview()
